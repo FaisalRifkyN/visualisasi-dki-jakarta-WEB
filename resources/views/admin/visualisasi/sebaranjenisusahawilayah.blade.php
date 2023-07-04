@@ -1,6 +1,15 @@
 @extends('admin/app')
 
 @section('content')
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+<py-env>
+    - matplotlib
+    - pandas
+    - paths:
+        - py/data.csv
+</py-env>
 <div class="container-fluid py-3">
     <div class="row mt-4">
         <div class="mb-lg-0 mb-4">
@@ -12,20 +21,18 @@
                         </div>
                     </div>
                     <div class="card-body pt-4 p-3">
-                        @foreach($Grafik as $row)
+                        <!-- @foreach($Grafik as $row)
                         @if($row->img == "grafik6.png")
                         <center>
                             <img src="{{'/assets/img/'.$row->img}}" alt="Grafik Jenis Usaha">
                         </center>
                         @endif
-                        @endforeach
-                        <!-- <div id="grafik1"></div>
-                        <py-script output="grafik1" src="admin/visualisasi/python/banyak_jenis_usaha_01.py">
-                        </py-script> -->
-
-                        <!-- <div id="grafik-container2"></div>
-                        <py-script output="grafik-container2" src="py/grafik2.py">
-                        </py-script> -->
+                        @endforeach -->
+                        <center>
+                        <div id="grafik"></div>
+                        </center>
+                        <py-script output="grafik" src="py/sebaran_jenis_usaha_wilayah_06.py">
+                        </py-script>
 
                     </div>
                 </div>

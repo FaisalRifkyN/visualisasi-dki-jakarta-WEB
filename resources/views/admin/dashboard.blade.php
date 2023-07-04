@@ -2,7 +2,7 @@
 
 @section('content')
 <?php
-$file = fopen(resource_path('views/admin/visualisasi/data/data.csv'), 'r');
+$file = fopen(public_path('/py/data.csv'), 'r');
 $data = array();
 $counter = 0;
 
@@ -40,7 +40,7 @@ $jumlahUsaha = count($data);
                     </div>
                 </div>
                 <?php
-                $file = fopen(resource_path('views/admin/visualisasi/data/data.csv'), 'r');
+                $file = fopen(public_path('/py/data.csv'), 'r');
                 $data = array();
                 $counter = 0;
 
